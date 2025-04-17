@@ -29,4 +29,9 @@ public abstract class Configuration {
      */
     public abstract Configuration clone();
 
+    /**
+     * Allow the defenition of defaults in case of a missing configuration
+     */
+    public abstract void setDefaults();
+
 }

@@ -66,6 +66,33 @@ public class ConfigManager {
     }
 
     /**
+     * Checks if the configuration file of the config with respective {@code name} exists
+     * @param name The name of the config
+     * @return If the file exists
+     */
+    public boolean fileExists(String name) {
+        Config c = this.configs.get(name);
+        if (c == null) {
+            return false;
+        }
+        return c.exists();
+    }
+
+    /**
+     * Creates a new configuration file for the config with the respective {@code name}
+     * @param name The name of the config
+     * @throws IOException If the configuration file cannot be created
+     * @throws ConfigNotFound If the config does not exist
+     */
+    public void createFile(String name) throws IOException, ConfigNotFound {
+        Config c = this.configs.get(name);
+        if (c == null) {
+            throw new ConfigNotFound(name);
+        }
+        c.createFile();
+    }
+
+    /**
      * Saves the config with the respective {@code name} to the file
      * @param name The name of the config to be saved
      * @throws ConfigNotFound If the config doesn't exist
@@ -99,6 +126,15 @@ public class ConfigManager {
     }
 
     // DATA MANAGEMENT
+
+    /**
+     * Checks if the configuration with {@code name} exists
+     * @param name The name of the configuration
+     * @return If the config exists
+     */
+    public boolean exists(String name) {
+        return this.configs.containsKey(name);
+    }
 
     /**
      * Sets the information in the hashmap to the one that is passed on the arguments

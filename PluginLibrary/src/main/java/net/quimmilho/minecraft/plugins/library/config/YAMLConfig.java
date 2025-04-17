@@ -38,7 +38,7 @@ public non-sealed class YAMLConfig<ConfigDataType extends Configuration> extends
      */
     @Override
     public void save(ConfigDataType config) throws IOException {
-        if (notExists()) {
+        if (!exists()) {
             createFile();
         }
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory()).enable(SerializationFeature.INDENT_OUTPUT)

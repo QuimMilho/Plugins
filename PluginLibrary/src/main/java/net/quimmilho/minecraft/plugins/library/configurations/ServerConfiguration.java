@@ -49,6 +49,15 @@ public class ServerConfiguration extends Configuration {
         return config;
     }
 
+    /**
+     * Sets the {@link ServerConfiguration} default values
+     */
+    @Override
+    public void setDefaults() {
+        host = "localhost";
+        port = 8080;
+    }
+
     // GETTERS AND SETTERS
 
     /**

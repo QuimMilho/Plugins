@@ -37,7 +37,7 @@ public non-sealed class JSONConfig <ConfigDataType extends Configuration> extend
      */
     @Override
     public void save(ConfigDataType config) throws IOException {
-        if (notExists()) {
+        if (!exists()) {
             createFile();
         }
         ObjectMapper mapper = new ObjectMapper(new JsonFactory()).enable(SerializationFeature.INDENT_OUTPUT)
