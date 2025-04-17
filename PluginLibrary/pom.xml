@@ -6,7 +6,7 @@
 
     <groupId>net.quimmilho.minecraft</groupId>
     <artifactId>PluginLibrary</artifactId>
-    <version>1.21.0003</version>
+    <version>1.21.0005</version>
     <packaging>jar</packaging>
 
     <name>Plugin Library</name>
