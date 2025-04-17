@@ -103,8 +103,8 @@ public abstract sealed class Config <ConfigDataType extends Configuration> permi
     }
 
     /**
-     * Checks if the config file doesn't exist
-     * @return Returns true if the file doesn't exist
+     * Checks if the config file exists
+     * @return Returns true if the file exists
      */
     public boolean exists() {
         return file.exists();

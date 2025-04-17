@@ -10,6 +10,15 @@ public class ServerConfiguration extends Configuration {
     // DATA
 
     /**
+     * The name of the current minecraft server (mainly used by the proxy)
+     */
+    private String serverName;
+    /**
+     * The server type (minigame or lobby name)
+     */
+    private String serverType;
+
+    /**
      * Server host (Client and Server side)
      */
     private String host;
@@ -56,9 +65,43 @@ public class ServerConfiguration extends Configuration {
     public void setDefaults() {
         host = "localhost";
         port = 8080;
+        serverName = "server-1";
+        serverType = "server";
     }
 
     // GETTERS AND SETTERS
+
+    /**
+     * Gets the server type (minigame or lobby name)
+     * @return The server type
+     */
+    public String getServerType() {
+        return serverType;
+    }
+
+    /**
+     * Sets the server type (minigame or lobby name)
+     * @param serverType The new server type
+     */
+    public void setServerType(String serverType) {
+        this.serverType = serverType;
+    }
+
+    /**
+     * Gets the server name
+     * @return The server name
+     */
+    public String getServerName() {
+        return serverName;
+    }
+
+    /**
+     * Sets the server name
+     * @param serverName The new server name
+     */
+    public void setServerName(String serverName) {
+        this.serverName = serverName;
+    }
 
     /**
      * Gets the server port
